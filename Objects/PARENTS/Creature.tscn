@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/PARENTS/Creature.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 6 )
+
+[node name="Creature" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2( -13, 10 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 4
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2( 13, 10 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 4

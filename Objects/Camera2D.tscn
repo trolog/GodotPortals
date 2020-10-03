@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/camera_shake.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/square.png" type="Texture" id=2]
+
+[node name="Camera2D" type="Camera2D"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+
+[node name="timer_shake_length" type="Timer" parent="."]
+one_shot = true
+
+[node name="timer_wait_times" type="Timer" parent="."]
+
+[node name="tween_camera_shake" type="Tween" parent="."]
+
+[node name="flash_sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0.0551453, -0.322509 )
+scale = Vector2( 31.2505, 17.7232 )
+texture = ExtResource( 2 )
